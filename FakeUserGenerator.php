@@ -22,7 +22,7 @@ class FakeUserGenerator
             $email = ucfirst($forename) . '.' . ucfirst($surname) . '@example.ac.uk';
             $users[] = (object) [
                 'surname' => $surname,
-                'forename' => $forename,
+                'forenames' => $forename,
                 'username' => $username,
                 'email' => $email,
             ];

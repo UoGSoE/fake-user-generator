@@ -22,7 +22,7 @@ dd($userData);
 /**
 [
   "surname" => "MacMillan",
-  "forename" => "Jennifer",
+  "forenames" => "Jennifer",
   "username" => "jgm1a",
   "email" => "Jennifer.MacMillan@example.ac.uk"
 ]
