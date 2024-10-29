@@ -9,9 +9,9 @@ class FakeUserGenerator
     /**
      * Generate a user or a collection of users.
      * @param int $count
-     * @return object|\Illuminate\Support\Collection
+     * @return array|\Illuminate\Support\Collection
      */
-    public static function generate(int $count = 1): object
+    public static function generate(int $count = 1): array|\Illuminate\Support\Collection
     {
         $faker = Factory::create();
         $users = [];
@@ -20,7 +20,7 @@ class FakeUserGenerator
             $forename = $faker->unique()->firstName();
             $username = strtolower($forename[0] . $faker->randomLetter() . $surname[0] . random_int(1, 9) . $faker->randomLetter());
             $email = ucfirst($forename) . '.' . ucfirst($surname) . '@example.ac.uk';
-            $users[] = (object) [
+            $users[] = [
                 'surname' => $surname,
                 'forenames' => $forename,
                 'username' => $username,
