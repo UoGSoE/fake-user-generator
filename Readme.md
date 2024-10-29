@@ -6,25 +6,11 @@ looks vaguely correct.
 Drop the class into database/factories/ then in your own factories you can do :
 
 ```php
+// in a test
+$user = User::factory()->create(FakeUserFactory::generate());
 
-class UserFactory extends Factory
-{
-    public function definition(): array
-    {
-        $user = FakeUserGenerator::generate();
-        // or
-        // $users = FakeUserGenerator::generate(5);
-
-        return [
-            'username' => $user->username,
-            'forename' => $user->forename,
-            'surname' => $user->surname,
-            'email' => $user->email,
-            'is_staff' => true,
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
-        ];
-    }
-}
+// or more verbose
+$userData = FakeUserGenerator::generate();
+$userData['surname'] = 'Smith';
+$user = User::factory()->create($userData);
 ```
-
