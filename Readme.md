@@ -27,4 +27,16 @@ dd($userData);
   "email" => "Jennifer.MacMillan@example.ac.uk"
 ]
 */
+
+// generate a student user
+$userData = FakeUserGenerator::generateStudent();
+dd($userData);
+/**
+[
+  "surname" => "Smith",
+  "forenames" => "Karen",
+  "username" => "3848291s",
+  "email" => "3848291s@student.example.ac.uk"
+]
+*/
 ```
